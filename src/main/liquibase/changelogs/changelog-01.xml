@@ -1,0 +1,15 @@
+<databaseChangeLog xmlns='http://www.liquibase.org/xml/ns/dbchangelog'
+                   xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+                   xsi:schemaLocation='http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd'>
+    <changeSet id="1" author="Alexandra">
+        <sql>
+            create table user (
+            user_id integer not null auto_increment,
+            email varchar(255) not null unique,
+            primary key (user_id))
+        </sql>
+        <rollback>
+            <dropTable tableName="user"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
